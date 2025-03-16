@@ -42,7 +42,7 @@ export default function AdminTable() {
 
     const getSubscriptions = async () => {
         try {
-            const resp = await fetch('http://localhost:3001/requests', {
+            const resp = await fetch('http://localhost:3005/requests', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token,
@@ -60,8 +60,8 @@ export default function AdminTable() {
     }
 
     const sendApproval = async (creator_id, subscriber_id, status) => {
-        console.log('http://localhost:3001/approve/' + status + "/" + String(creator_id) + "/" + String(subscriber_id))
-        const resp = await fetch('http://localhost:3001/approve/' + status + "/" + String(creator_id) + "/" + String(subscriber_id), {
+        console.log('http://localhost:3005/approve/' + status + "/" + String(creator_id) + "/" + String(subscriber_id))
+        const resp = await fetch('http://localhost:3005/approve/' + status + "/" + String(creator_id) + "/" + String(subscriber_id), {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token,

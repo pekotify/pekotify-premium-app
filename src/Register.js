@@ -23,7 +23,7 @@ const Register = () => {
             alert('Username can only contain letters, numbers and underscores');
         }
 
-        fetch('http://localhost:3001/register/check-username?username=' + form.username, {
+        fetch('http://localhost:3005/register/check-username?username=' + form.username, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const Register = () => {
                 if (!data) {
                     alert('Username already exists');
                 } else {
-                    fetch('http://localhost:3001/register/check-email?email=' + form.email, {
+                    fetch('http://localhost:3005/register/check-email?email=' + form.email, {
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const Register = () => {
                                 alert('Email already exists');
                             } else {
                                 console.log(data);
-                                fetch('http://localhost:3001/register/', {
+                                fetch('http://localhost:3005/register/', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json'
