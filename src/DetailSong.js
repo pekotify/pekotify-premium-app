@@ -41,7 +41,7 @@ export default function DetailSong() {
         var audioPath = '';
 
         if (isEdit) {
-            audioPath = await axios.put('http://localhost:3005/songs/file/' + id, data, config
+            audioPath = await axios.put('http://localhost:3010/songs/file/' + id, data, config
             ).then((res) => {
                 console.log(res);
                 return res.data;
@@ -50,7 +50,7 @@ export default function DetailSong() {
             });
         }
         else {
-            audioPath = await axios.post('http://localhost:3005/songs/file', data, config
+            audioPath = await axios.post('http://localhost:3010/songs/file', data, config
             ).then((res) => {
                 console.log(res);
                 return res.data;
@@ -67,7 +67,7 @@ export default function DetailSong() {
         console.log(song);
 
         if (isEdit) {
-            response = await fetch('http://localhost:3005/songs/' + localStorage.getItem('songId'), {
+            response = await fetch('http://localhost:3010/songs/' + localStorage.getItem('songId'), {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token,
@@ -76,7 +76,7 @@ export default function DetailSong() {
                 body: JSON.stringify(song)
             })
         } else {
-            response = await fetch('http://localhost:3005/songs', {
+            response = await fetch('http://localhost:3010/songs', {
                 method: 'POST',
                 headers: {
                     'Authorization': 'Bearer ' + token,

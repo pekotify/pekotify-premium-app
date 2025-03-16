@@ -32,7 +32,7 @@ export default function SongTable() {
 
   const getSongs = async () => {
     try {
-      const resp = await fetch('http://localhost:3005/songs/' + userId, {
+      const resp = await fetch('http://localhost:3010/songs/' + userId, {
         method: 'GET',
         headers: {
           'Authorization': 'Bearer ' + token,
@@ -64,7 +64,7 @@ export default function SongTable() {
 
   const handleDeleteSong = async (id, title) => {
     if (window.confirm('Are you sure to delete song ' + title + '?')) {
-      const resp = await fetch('http://localhost:3005/songs/' + id, {
+      const resp = await fetch('http://localhost:3010/songs/' + id, {
         method: 'DELETE',
         headers: {
           'Authorization': 'Bearer ' + token,

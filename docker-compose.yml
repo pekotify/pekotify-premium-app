@@ -8,6 +8,6 @@ services:
       - '.:/app'
       - '/app/node_modules'
     ports:
-      - 3000:3000
+      - 5005:5005
     environment:
       - CHOKIDAR_USEPOLLING=true
