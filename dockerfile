@@ -15,7 +15,8 @@ RUN npm install
 COPY . ./
 
 # start app
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "build"]
+CMD ["npm", "run", "start"]
 
 # # Set the working directory to /app inside the container
 # WORKDIR /app
